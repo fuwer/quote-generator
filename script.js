@@ -43,7 +43,7 @@ async function getQuote() {
         //Stop Loader, Stop Quote
         complete();
     } catch (error) {
-        console.log ("OOOPS");
+        console.log ('OOOPS');
         getQuote();
     }
 }
