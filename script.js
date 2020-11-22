@@ -44,11 +44,7 @@ async function getQuote() {
         complete();
     } catch (error) {
         console.log ("OOOPS");
-        if (error >= 5) {
-            alert("Something went wrong")
-        } else{
-            getQuote();
-        }
+        getQuote();
     }
 }
 
