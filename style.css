@@ -1,14 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
-
 html {
     box-sizing: border-box;
 }
-
 body {
     margin: 0;
-    min-height: 100vh; 
-    /* vh = 1 percent of browser window height
-       vw = 1 percent of browser window width */
+    min-height: 100vh;
     background-color: #333333;
     background-image: url("data:image/svg+xml,%3Csvg width='40' height='12' viewBox='0 0 40 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6.172L6.172 0h5.656L0 11.828V6.172zm40 5.656L28.172 0h5.656L40 6.172v5.656zM6.172 12l12-12h3.656l12 12h-5.656L20 3.828 11.828 12H6.172zm12 0L20 10.172 21.828 12h-3.656z' fill='%23222222' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
     color: #ffffff;
@@ -18,13 +14,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* display: block = div takes all width of page, so they are placed like
-    1
-    2
-       display: flex = div takes only place that it needs so the are placed like
-    1 2 
-    align-items can be flex-start(top of page), flex-end(bottom of page), center, stretch(all height of the page, but height = auto!), baseline()
-    justify-content can be flex-start(left side of page), flex-end(right side of page), center, space-between and space-around*/
 }
 
 .quote-container {
@@ -33,27 +22,33 @@ body {
     padding: 20px 30px;
     border-radius: 10px;
     background-color: rgba(17, 17, 17, 0.685);
-    /* box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2); */
     box-shadow: 10px 10px 6px 1px rgba(0, 0, 0, 0.26);
 }
 
 .quote-text {
     font-size: 2.75rem;
 }
-
 .long-quote {
-    font-size:2rem;
+    font-size: 2rem;
 }
-
 .fa-quote-left {
     font-size: 4rem;
 }
-
 .quote-author {
     margin-top: 15px;
     font-size: 2rem;
     font-weight: 400;
     font-style: italic;
+}
+
+/* media-query */
+@media screen and (max-width: 1000px) {
+    .quote-container{
+        margin: auto 10px;
+    }
+    .quote-text{
+        font-size: 2.5rem;
+    }
 }
 
 .button-container {
@@ -65,8 +60,8 @@ body {
 button {
     cursor: pointer;
     font-size: 1.2rem;
-    font-weight: 800;
     height: 2.5rem;
+    font-weight: 800;
     border: none;
     border-radius: 10px;
     color: rgb(41, 41, 41);
@@ -81,6 +76,11 @@ button:hover {
     filter: brightness(110%);
 }
 
+button:active {
+    transform: translate(0, 0.3rem);
+    box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
+}
+
 .twitter-button:hover {
     color: #38a1f3;
 }
@@ -89,10 +89,7 @@ button:hover {
     font-size: 1.5rem;
 }
 
-button:active {
-    transform: translate(0, 0.3rem);
-    box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
-}
+/* loader - copied from w3 school */
 
 .loader {
     border: 16px solid #f3f3f3;
@@ -101,20 +98,9 @@ button:active {
     width: 120px;
     height: 120px;
     animation: spin 2s linear infinite;
-  }
+}
   
-  @keyframes spin {
+@keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-  }
-
-/* Media Query: Tablet or Smaller*/
-@media screen and (max-width: 1000px) {
-    .quote-container {
-        margin: auto 10px;
-    }
-
-    .quote-text {
-        font-size: 2.5rem;
-    }
 }
